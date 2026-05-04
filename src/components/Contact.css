@@ -1,0 +1,130 @@
+.contact {
+  border-top: 1px solid var(--border);
+}
+
+.contact__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 8rem);
+  align-items: end;
+}
+
+/* ── Main ─────────────────────────────────────── */
+
+.contact__heading {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 3rem;
+}
+
+.contact__heading em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.contact__email {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2.2vw, 1.6rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--white);
+  position: relative;
+  transition: color 0.3s;
+}
+
+.contact__email::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact__email:hover {
+  color: var(--accent);
+}
+
+.contact__email:hover::after {
+  transform: scaleX(1);
+}
+
+/* ── Info block ───────────────────────────────── */
+
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 0.5rem;
+}
+
+.contact__info-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.contact__info-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.contact__info-value {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: var(--white);
+}
+
+/* ── Socials ──────────────────────────────────── */
+
+.contact__socials {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.contact__social-link {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: var(--white);
+  position: relative;
+  transition: color 0.2s;
+}
+
+.contact__social-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.contact__social-link:hover {
+  color: var(--accent);
+}
+
+.contact__social-link:hover::after {
+  width: 100%;
+}
+
+/* ── Responsive ───────────────────────────────── */
+
+@media (max-width: 768px) {
+  .contact__layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
