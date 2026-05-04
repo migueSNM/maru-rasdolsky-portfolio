@@ -7,32 +7,32 @@ export default function Contact() {
   return (
     <section className="contact section" id="contact" ref={ref}>
       <div className="section-inner">
-        <p className="section-label reveal">04 — Contact</p>
+        <p className="section-label reveal">04 — Contacto</p>
 
         <div className="contact__layout">
           <div className="contact__main">
-            <h2 className="contact__heading reveal d1">
-              Let's work<br /><em>together.</em>
+            <h2 className="contact__heading reveal">
+              Trabajemos<br /><em>juntos.</em>
             </h2>
             <a
-              href="mailto:contact@marianarasdolsky.com"
-              className="contact__email reveal d2"
+              href="mailto:contacto@marianarasdolsky.com"
+              className="contact__email reveal"
             >
-              contact@marianarasdolsky.com
+              contacto@marianarasdolsky.com
             </a>
           </div>
 
-          <div className="contact__info reveal d3">
+          <div className="contact__info reveal">
             <div className="contact__info-group">
-              <p className="contact__info-label">Location</p>
+              <p className="contact__info-label">Ubicación</p>
               <p className="contact__info-value">Buenos Aires, Argentina</p>
             </div>
             <div className="contact__info-group">
-              <p className="contact__info-label">Availability</p>
-              <p className="contact__info-value">Open to commissions &amp; collaborations</p>
+              <p className="contact__info-label">Disponibilidad</p>
+              <p className="contact__info-value">Disponible para comisiones y colaboraciones</p>
             </div>
             <div className="contact__info-group">
-              <p className="contact__info-label">Follow</p>
+              <p className="contact__info-label">Seguir</p>
               <div className="contact__socials">
                 <a
                   href="https://www.instagram.com"

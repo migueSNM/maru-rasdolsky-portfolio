@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 import './Nav.css'
 
 const links = [
-  { label: 'Work',       href: '#work'       },
-  { label: 'About',      href: '#about'       },
-  { label: 'Experience', href: '#experience'  },
-  { label: 'Contact',    href: '#contact'     },
+  { label: 'Trabajo',     href: '#work'       },
+  { label: 'Sobre mí',    href: '#about'       },
+  { label: 'Experiencia', href: '#experience'  },
+  { label: 'Contacto',    href: '#contact'     },
 ]
 
 export default function Nav() {
@@ -23,7 +23,7 @@ export default function Nav() {
   return (
     <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
       <div className="nav__inner">
-        <a href="#top" className="nav__logo">
+        <a href="#hero" className="nav__logo">
           <span className="nav__logo-first">Mariana</span>
           <span className="nav__logo-last">Rasdolsky</span>
         </a>
@@ -39,7 +39,7 @@ export default function Nav() {
         <button
           className={`nav__burger ${menuOpen ? 'nav__burger--open' : ''}`}
           onClick={() => setMenuOpen(v => !v)}
-          aria-label="Toggle menu"
+          aria-label="Abrir menú"
         >
           <span /><span /><span />
         </button>

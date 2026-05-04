@@ -28,28 +28,28 @@
 */
 
 :root {
-  /* ── Background scene (fixed layer, one per section) ─── */
-  --bg-hero:       #ece8e1;
-  --bg-work:       #ddd7cf;
-  --bg-about:      #e6e1da;
-  --bg-experience: #e2dcd5;
-  --bg-contact:    #eae5de;
+  /* ── Background scene (one per section) ──────── */
+  --bg-hero:       #f5f4f2;
+  --bg-work:       #efeeeb;
+  --bg-about:      #f3f2f0;
+  --bg-experience: #f1f0ed;
+  --bg-contact:    #f5f4f2;
 
-  /* ── Surface & text ─────────────────────────────────── */
-  --surface:  #f7f4ef;
-  --text:     #1c1a17;
-  --dim:      #6b6660;
-  --muted:    #a39d96;
-  --border:   #d8d3cb;
-  --accent:   #6a5540;
+  /* ── Palette ─────────────────────────────────── */
+  --surface:  #fafaf8;
+  --text:     #131312;
+  --dim:      #555552;
+  --muted:    #9c9c9a;
+  --border:   #ddddd9;
+  --accent:   #131312;
 
-  /* ── Typography ─────────────────────────────────────── */
+  /* ── Typography ──────────────────────────────── */
   --font: 'Favorit Variable', 'Favorit', 'Plus Jakarta Sans', system-ui, sans-serif;
 
-  /* ── Layout ─────────────────────────────────────────── */
-  --nav-h:   60px;
-  --page-x:  clamp(1.5rem, 5vw, 5rem);
-  --max-w:   1440px;
+  /* ── Layout ──────────────────────────────────── */
+  --nav-h:  60px;
+  --page-x: clamp(1.5rem, 5vw, 5rem);
+  --max-w:  1440px;
 }
 
 *, *::before, *::after {
@@ -68,7 +68,7 @@ body {
   font-weight: 300;
   line-height: 1.65;
   color: var(--text);
-  background: transparent; /* fixed bg-scene handles this */
+  background: transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -84,44 +84,31 @@ img {
   max-width: 100%;
 }
 
-/* ── Scroll-reveal ────────────────────────────────────── */
+/* ── Scroll-reveal — opacity only, no movement ── */
 
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition:
-    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.55s ease;
 }
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
-.d1 { transition-delay: 0.05s; }
-.d2 { transition-delay: 0.15s; }
-.d3 { transition-delay: 0.25s; }
-.d4 { transition-delay: 0.35s; }
-.d5 { transition-delay: 0.45s; }
-.d6 { transition-delay: 0.55s; }
-.d7 { transition-delay: 0.65s; }
-.d8 { transition-delay: 0.75s; }
-
-/* ── Selection ────────────────────────────────────────── */
+/* ── Selection ────────────────────────────────── */
 
 ::selection {
-  background: var(--accent);
+  background: var(--text);
   color: var(--surface);
 }
 
-/* ── Scrollbar ────────────────────────────────────────── */
+/* ── Scrollbar ────────────────────────────────── */
 
 ::-webkit-scrollbar       { width: 2px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border); }
 
-/* ── Shared section structure ─────────────────────────── */
+/* ── Shared section structure ─────────────────── */
 
 .section {
   padding: clamp(5rem, 9vw, 9rem) var(--page-x);
@@ -157,12 +144,4 @@ img {
 
 .bg-gap {
   height: clamp(60px, 10vh, 140px);
-}
-
-/* ── Horizontal rule ──────────────────────────────────── */
-
-.rule {
-  width: 100%;
-  height: 1px;
-  background: var(--border);
 }

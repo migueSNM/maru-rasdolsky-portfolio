@@ -18,12 +18,12 @@ export default function Hero() {
 
         <div className="hero__foot">
           <div className="hero__rule" />
-          <p className="hero__discipline">Photographer</p>
+          <p className="hero__discipline">Fotógrafa</p>
           <p className="hero__years">2018 — 2025</p>
         </div>
       </div>
 
-      <a href="#work" className="hero__scroll" aria-label="Scroll to work">
+      <a href="#work" className="hero__scroll" aria-label="Ir al trabajo">
         <span className="hero__scroll-text">Scroll</span>
         <span className="hero__scroll-arrow">↓</span>
       </a>

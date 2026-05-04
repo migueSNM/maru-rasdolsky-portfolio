@@ -4,18 +4,18 @@ import './Work.css'
 const works = [
   {
     id: 1,
-    title: 'Untitled I',
+    title: 'Sin título I',
     series: 'Silencio',
     year: '2024',
-    medium: 'Analog, 35mm',
+    medium: 'Analógica, 35mm',
     size: 'wide',
   },
   {
     id: 2,
-    title: 'Untitled II',
+    title: 'Sin título II',
     series: 'Silencio',
     year: '2024',
-    medium: 'Analog, 35mm',
+    medium: 'Analógica, 35mm',
     size: 'tall',
   },
   {
@@ -31,7 +31,7 @@ const works = [
     title: 'Identidad I',
     series: 'Retratos',
     year: '2023',
-    medium: 'Analog, medium format',
+    medium: 'Analógica, formato medio',
     size: 'wide',
   },
   {
@@ -39,12 +39,12 @@ const works = [
     title: 'Después',
     series: 'Retratos',
     year: '2023',
-    medium: 'Analog, 35mm',
+    medium: 'Analógica, 35mm',
     size: 'square',
   },
   {
     id: 6,
-    title: 'Luz Tenue',
+    title: 'Luz tenue',
     series: 'Silencio',
     year: '2024',
     medium: 'Digital',
@@ -52,10 +52,10 @@ const works = [
   },
   {
     id: 7,
-    title: 'Fragmento Urbano',
+    title: 'Fragmento urbano',
     series: 'Ciudad',
     year: '2024',
-    medium: 'Analog, 35mm',
+    medium: 'Analógica, 35mm',
     size: 'wide',
   },
   {
@@ -70,7 +70,7 @@ const works = [
 
 function PhotoPlaceholder({ work, index }) {
   return (
-    <article className={`work-item work-item--${work.size} reveal d${(index % 6) + 1}`}>
+    <article className={`work-item work-item--${work.size} reveal`}>
       <div className="work-item__frame">
         <div className="work-item__photo">
           <div className="work-item__inner">
@@ -97,12 +97,12 @@ export default function Work() {
     <section className="work section" id="work" ref={ref}>
       <div className="section-inner">
         <header className="work__header reveal">
-          <p className="section-label">01 — Selected Works</p>
+          <p className="section-label">01 — Trabajo</p>
           <div className="work__header-row">
-            <h2 className="work__title">Portfolio</h2>
+            <h2 className="work__title">Portafolio</h2>
             <p className="work__subtitle">
-              A selection of series spanning portraiture,<br />
-              urban landscape, and documentary work.
+              Una selección de series que abarca retrato,<br />
+              paisaje urbano y fotografía documental.
             </p>
           </div>
         </header>

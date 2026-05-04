@@ -3,59 +3,59 @@ import './Experience.css'
 
 const professional = [
   {
-    role: 'Freelance Photographer',
-    place: 'Independent Practice',
+    role: 'Fotógrafa independiente',
+    place: 'Práctica independiente',
     location: 'Buenos Aires, AR',
-    period: '2020 — Present',
-    notes: 'Editorial, portrait, and commercial commissions for clients across the arts, fashion, and cultural sectors.',
+    period: '2020 — Presente',
+    notes: 'Comisiones editoriales, de retrato y comerciales para clientes del ámbito cultural, la moda y las artes.',
   },
   {
-    role: 'Photography Assistant',
+    role: 'Asistente de fotografía',
     place: 'Estudio Colectivo',
     location: 'Buenos Aires, AR',
     period: '2019 — 2020',
-    notes: 'Assisted senior photographers on advertising and editorial campaigns; managed analog lab processes.',
+    notes: 'Asistencia a fotógrafos senior en campañas publicitarias y editoriales; gestión de procesos de laboratorio analógico.',
   },
   {
-    role: 'Editorial Photographer',
+    role: 'Fotógrafa editorial',
     place: 'Revista Anfibia',
     location: 'Buenos Aires, AR',
     period: '2018 — 2019',
-    notes: 'Visual storytelling for long-form journalism and cultural features.',
+    notes: 'Narrativa visual para periodismo de largo aliento y coberturas culturales.',
   },
   {
-    role: 'Gallery Exhibition',
+    role: 'Exposición colectiva',
     place: 'Centro Cultural Recoleta',
     location: 'Buenos Aires, AR',
     period: '2023',
-    notes: 'Group exhibition — "Cuerpos en Tránsito". Series Retratos, 12 prints.',
+    notes: '"Cuerpos en Tránsito". Serie Retratos, 12 copias.',
   },
 ]
 
 const academic = [
   {
-    title: 'BFA — Photography',
+    title: 'Licenciatura en Fotografía',
     institution: 'Universidad de Buenos Aires (UBA)',
     period: '2014 — 2018',
-    notes: 'Focus on documentary practice and darkroom processes. Thesis on the use of grain as expressive medium.',
+    notes: 'Enfoque en práctica documental y procesos de cuarto oscuro. Tesis sobre el uso del grano como medio expresivo.',
   },
   {
-    title: 'Seminar: Documentary Photography',
+    title: 'Seminario: Fotografía documental',
     institution: 'FOLA — Fototeca Latinoamericana',
     period: '2022',
-    notes: 'Intensive with Jorge Piccini — witness, memory, and the ethics of representation.',
+    notes: 'Intensivo con Jorge Piccini — el testigo, la memoria y la ética de la representación.',
   },
   {
-    title: 'Workshop: Retrato e Identidad',
+    title: 'Taller: Retrato e identidad',
     institution: 'ICI Instituto de Cooperación',
     period: '2023',
-    notes: 'Six-week workshop exploring constructed identity in photographic portraiture.',
+    notes: 'Taller de seis semanas explorando la identidad construida en el retrato fotográfico.',
   },
   {
-    title: 'Masterclass: Archivo y Memoria',
+    title: 'Masterclass: Archivo y memoria',
     institution: 'Centro de Arte y Fotografía',
     period: '2021',
-    notes: 'Archival practices and the political dimensions of photographic memory.',
+    notes: 'Prácticas de archivo y las dimensiones políticas de la memoria fotográfica.',
   },
 ]
 
@@ -84,13 +84,13 @@ export default function Experience() {
   return (
     <section className="exp section" id="experience" ref={ref}>
       <div className="section-inner">
-        <p className="section-label reveal">03 — Experience</p>
+        <p className="section-label reveal">03 — Experiencia</p>
 
-        <h2 className="exp__heading reveal d1">Background</h2>
+        <h2 className="exp__heading reveal">Trayectoria</h2>
 
         <div className="exp__columns">
           <div className="exp__col">
-            <h3 className="exp__col-title reveal d2">Professional</h3>
+            <h3 className="exp__col-title reveal">Profesional</h3>
             <div className="exp__list">
               {professional.map((e, i) => (
                 <Entry key={i} entry={e} type="professional" />
@@ -101,7 +101,7 @@ export default function Experience() {
           <div className="exp__divider" />
 
           <div className="exp__col">
-            <h3 className="exp__col-title reveal d3">Academic</h3>
+            <h3 className="exp__col-title reveal">Académica</h3>
             <div className="exp__list">
               {academic.map((e, i) => (
                 <Entry key={i} entry={e} type="academic" />

@@ -7,58 +7,58 @@ export default function About() {
   return (
     <section className="about section" id="about" ref={ref}>
       <div className="section-inner">
-        <p className="section-label reveal">02 — About</p>
+        <p className="section-label reveal">02 — Sobre mí</p>
 
         <div className="about__layout">
           <div className="about__text-col">
-            <h2 className="about__statement reveal d1">
-              Light is not<br />
-              just illumination —<br />
-              it is <em>language.</em>
+            <h2 className="about__statement reveal">
+              La luz no es solo<br />
+              iluminación — es <em>lenguaje.</em>
             </h2>
 
-            <div className="about__bio reveal d2">
+            <div className="about__bio reveal">
               <p>
-                Mariana Rasdolsky is a Buenos Aires-based photographer whose practice
-                spans portraiture, urban documentary, and conceptual series. Trained
-                in fine arts photography, she approaches each image as a negotiation
-                between presence and absence — what is shown, and what is withheld.
+                Mariana Rasdolsky es una fotógrafa radicada en Buenos Aires cuya
+                práctica abarca el retrato, el documental urbano y las series
+                conceptuales. Formada en bellas artes con especialidad en fotografía,
+                se acerca a cada imagen como una negociación entre presencia y
+                ausencia — lo que se muestra y lo que se retiene.
               </p>
               <p>
-                Her work has been exhibited in galleries across Argentina and featured
-                in independent editorial publications. She works primarily with analog
-                processes alongside digital capture, often combining both within the
-                same series to create textural and temporal contrasts.
+                Su trabajo ha sido exhibido en galerías de Argentina y publicado en
+                medios editoriales independientes. Trabaja principalmente con procesos
+                analógicos junto con la captura digital, combinando ambos dentro de
+                una misma serie para crear contrastes texturales y temporales.
               </p>
               <p>
-                Commissions, collaborations, and editorial inquiries are welcome.
+                Comisiones, colaboraciones y consultas editoriales son bienvenidas.
               </p>
             </div>
 
-            <div className="about__facts reveal d3">
+            <div className="about__facts reveal">
               <div className="about__fact">
-                <span className="about__fact-label">Based in</span>
+                <span className="about__fact-label">Basada en</span>
                 <span className="about__fact-value">Buenos Aires, Argentina</span>
               </div>
               <div className="about__fact">
-                <span className="about__fact-label">Practice</span>
-                <span className="about__fact-value">Portraiture · Documentary · Conceptual</span>
+                <span className="about__fact-label">Práctica</span>
+                <span className="about__fact-value">Retratos · Documental · Conceptual</span>
               </div>
               <div className="about__fact">
-                <span className="about__fact-label">Medium</span>
-                <span className="about__fact-value">Analog 35mm · Medium Format · Digital</span>
+                <span className="about__fact-label">Medio</span>
+                <span className="about__fact-value">Analógica 35mm · Formato medio · Digital</span>
               </div>
               <div className="about__fact">
-                <span className="about__fact-label">Languages</span>
-                <span className="about__fact-value">Spanish · English</span>
+                <span className="about__fact-label">Idiomas</span>
+                <span className="about__fact-value">Español · Inglés</span>
               </div>
             </div>
           </div>
 
-          <div className="about__photo-col reveal d2">
+          <div className="about__photo-col reveal">
             <div className="about__portrait">
               <div className="about__portrait-placeholder">
-                <span className="about__portrait-label">Portrait</span>
+                <span className="about__portrait-label">Retrato</span>
               </div>
               <p className="about__photo-caption">Mariana Rasdolsky, Buenos Aires — 2024</p>
             </div>
