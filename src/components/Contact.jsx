@@ -1,60 +1,49 @@
-import { useReveal } from '../hooks/useReveal'
 import './Contact.css'
 
 export default function Contact() {
-  const ref = useReveal(0.1)
-
   return (
-    <section className="contact section" id="contact" ref={ref}>
-      <div className="section-inner">
-        <p className="section-label reveal">04 — Contacto</p>
+    <div id="contact" className="contact-wrap">
+      <div className="section col2">
+        <p className="label">Contacto</p>
+        <div className="contact__content">
+          <a href="mailto:contacto@marianarasdolsky.com" className="contact__email">
+            contacto@marianarasdolsky.com
+          </a>
 
-        <div className="contact__layout">
-          <div className="contact__main">
-            <h2 className="contact__heading reveal">
-              Trabajemos<br /><em>juntos.</em>
-            </h2>
-            <a
-              href="mailto:contacto@marianarasdolsky.com"
-              className="contact__email reveal"
-            >
-              contacto@marianarasdolsky.com
-            </a>
-          </div>
-
-          <div className="contact__info reveal">
-            <div className="contact__info-group">
-              <p className="contact__info-label">Ubicación</p>
-              <p className="contact__info-value">Buenos Aires, Argentina</p>
+          <div className="contact__rows">
+            <div className="contact__row">
+              <span className="contact__row-label">Ubicación</span>
+              <span>Buenos Aires, Argentina</span>
             </div>
-            <div className="contact__info-group">
-              <p className="contact__info-label">Disponibilidad</p>
-              <p className="contact__info-value">Disponible para comisiones y colaboraciones</p>
+            <div className="contact__row">
+              <span className="contact__row-label">Disponibilidad</span>
+              <span>Disponible para comisiones y colaboraciones</span>
             </div>
-            <div className="contact__info-group">
-              <p className="contact__info-label">Seguir</p>
-              <div className="contact__socials">
+            <div className="contact__row">
+              <span className="contact__row-label">Redes</span>
+              <span>
                 <a
                   href="https://www.instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="contact__social-link"
+                  className="contact__social"
                 >
                   Instagram
                 </a>
+                {' · '}
                 <a
                   href="https://www.behance.net"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="contact__social-link"
+                  className="contact__social"
                 >
                   Behance
                 </a>
-              </div>
+              </span>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }

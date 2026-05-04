@@ -1,118 +1,86 @@
-import { useReveal } from '../hooks/useReveal'
 import './Work.css'
 
-const works = [
+const series = [
   {
-    id: 1,
-    title: 'Sin título I',
-    series: 'Silencio',
+    id: 'silencio',
+    title: 'Silencio',
+    number: '01',
     year: '2024',
     medium: 'Analógica, 35mm',
-    size: 'wide',
+    description:
+      'Una exploración de los espacios intermedios: aquello que ocurre entre un sonido y el siguiente, entre una presencia y su ausencia.',
+    notes: 'Impresión en gelatina de plata · Edición de 5',
   },
   {
-    id: 2,
-    title: 'Sin título II',
-    series: 'Silencio',
-    year: '2024',
-    medium: 'Analógica, 35mm',
-    size: 'tall',
-  },
-  {
-    id: 3,
-    title: 'Nocturna',
-    series: 'Ciudad',
+    id: 'ciudad',
+    title: 'Ciudad',
+    number: '02',
     year: '2023',
-    medium: 'Digital',
-    size: 'tall',
+    medium: 'Digital y analógica',
+    description:
+      'Fragmentos de Buenos Aires captados durante la noche. La ciudad como escenario de tránsitos anónimos y arquitecturas que cambian de significado con la oscuridad.',
+    notes: 'Impresión pigmentada · Edición de 5',
   },
   {
-    id: 4,
-    title: 'Identidad I',
-    series: 'Retratos',
-    year: '2023',
+    id: 'retratos',
+    title: 'Retratos',
+    number: '03',
+    year: '2023 – 2024',
     medium: 'Analógica, formato medio',
-    size: 'wide',
-  },
-  {
-    id: 5,
-    title: 'Después',
-    series: 'Retratos',
-    year: '2023',
-    medium: 'Analógica, 35mm',
-    size: 'square',
-  },
-  {
-    id: 6,
-    title: 'Luz tenue',
-    series: 'Silencio',
-    year: '2024',
-    medium: 'Digital',
-    size: 'tall',
-  },
-  {
-    id: 7,
-    title: 'Fragmento urbano',
-    series: 'Ciudad',
-    year: '2024',
-    medium: 'Analógica, 35mm',
-    size: 'wide',
-  },
-  {
-    id: 8,
-    title: 'Soledad',
-    series: 'Retratos',
-    year: '2023',
-    medium: 'Digital',
-    size: 'square',
+    description:
+      'Retratos construidos en colaboración con las personas fotografiadas. La cámara como excusa para detenerse, mirarse y ser mirado.',
+    notes: 'Impresión en gelatina de plata · Edición de 3',
   },
 ]
 
-function PhotoPlaceholder({ work, index }) {
+function WorkEntry({ serie }) {
   return (
-    <article className={`work-item work-item--${work.size} reveal`}>
-      <div className="work-item__frame">
-        <div className="work-item__photo">
-          <div className="work-item__inner">
-            <span className="work-item__num">0{work.id}</span>
-          </div>
-          <div className="work-item__overlay">
-            <p className="work-item__overlay-series">{work.series}</p>
-            <p className="work-item__overlay-medium">{work.medium}</p>
+    <div className="work-entry">
+      <div className="work-entry__inner">
+        {/* Left: info */}
+        <div className="work-entry__info">
+          <p className="work-entry__title">
+            {serie.title}
+            <span className="arrow">→</span>
+            {serie.number}
+          </p>
+          <p className="work-entry__meta">{serie.year} · {serie.medium}</p>
+          <p className="work-entry__desc">{serie.description}</p>
+          <p className="work-entry__notes">{serie.notes}</p>
+        </div>
+
+        {/* Center: main image */}
+        <div className="work-entry__main-img">
+          <div className="work-entry__placeholder">
+            <span className="work-entry__placeholder-label">Foto</span>
           </div>
         </div>
-        <footer className="work-item__footer">
-          <span className="work-item__title">{work.title}</span>
-          <span className="work-item__year">{work.year}</span>
-        </footer>
+
+        {/* Right: secondary image + caption */}
+        <div className="work-entry__secondary">
+          <div className="work-entry__placeholder work-entry__placeholder--sm">
+            <span className="work-entry__placeholder-label">Foto</span>
+          </div>
+        </div>
       </div>
-    </article>
+      <hr />
+    </div>
   )
 }
 
 export default function Work() {
-  const ref = useReveal(0.08)
-
   return (
-    <section className="work section" id="work" ref={ref}>
-      <div className="section-inner">
-        <header className="work__header reveal">
-          <p className="section-label">01 — Trabajo</p>
-          <div className="work__header-row">
-            <h2 className="work__title">Portafolio</h2>
-            <p className="work__subtitle">
-              Una selección de series que abarca retrato,<br />
-              paisaje urbano y fotografía documental.
-            </p>
-          </div>
-        </header>
-
-        <div className="work__grid">
-          {works.map((work, i) => (
-            <PhotoPlaceholder key={work.id} work={work} index={i} />
-          ))}
-        </div>
+    <div id="work" className="work-wrap">
+      <div className="section col2" style={{ paddingBottom: '1.5rem' }}>
+        <p className="label">Portafolio</p>
+        <p className="work__subtitle">
+          Una selección de series que abarca retrato, paisaje urbano y fotografía documental.
+        </p>
       </div>
-    </section>
+      <hr />
+      <div className="work-entries">
+        {series.map(s => <WorkEntry key={s.id} serie={s} />)}
+      </div>
+    </div>
   )
 }

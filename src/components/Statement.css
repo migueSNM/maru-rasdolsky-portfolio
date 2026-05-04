@@ -1,0 +1,14 @@
+.statement-wrap {
+  padding-top: clamp(3rem, 5vw, 5rem);
+}
+
+.statement__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  font-size: 0.9375rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text);
+  max-width: 56rem;
+}

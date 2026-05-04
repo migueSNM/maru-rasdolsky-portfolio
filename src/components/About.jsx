@@ -1,70 +1,65 @@
-import { useReveal } from '../hooks/useReveal'
 import './About.css'
 
 export default function About() {
-  const ref = useReveal(0.1)
-
   return (
-    <section className="about section" id="about" ref={ref}>
-      <div className="section-inner">
-        <p className="section-label reveal">02 — Sobre mí</p>
-
+    <div className="about-wrap" id="about">
+      <div className="section">
         <div className="about__layout">
-          <div className="about__text-col">
-            <h2 className="about__statement reveal">
-              La luz no es solo<br />
-              iluminación — es <em>lenguaje.</em>
-            </h2>
+          {/* Left: portrait */}
+          <div className="about__photo">
+            <div className="about__photo-placeholder">
+              <span className="about__photo-label">Retrato</span>
+            </div>
+            <p className="about__photo-caption">Buenos Aires, 2024</p>
+          </div>
 
-            <div className="about__bio reveal">
+          {/* Right: bio */}
+          <div className="about__text">
+            <p className="label" style={{ marginBottom: '1.5rem' }}>Bio</p>
+
+            <div className="about__bio">
               <p>
-                Mariana Rasdolsky es una fotógrafa radicada en Buenos Aires cuya
-                práctica abarca el retrato, el documental urbano y las series
-                conceptuales. Formada en bellas artes con especialidad en fotografía,
-                se acerca a cada imagen como una negociación entre presencia y
-                ausencia — lo que se muestra y lo que se retiene.
+                Mariana Rasdolsky (Buenos Aires, 1993) es fotógrafa. Vive y trabaja
+                en Buenos Aires.
+              </p>
+              <p>
+                Se formó en fotografía en la Universidad de Buenos Aires (UBA) y
+                participó en seminarios y talleres con referentes de la fotografía
+                latinoamericana contemporánea. Su práctica abarca el retrato, el
+                documental urbano y las series conceptuales.
               </p>
               <p>
                 Su trabajo ha sido exhibido en galerías de Argentina y publicado en
-                medios editoriales independientes. Trabaja principalmente con procesos
-                analógicos junto con la captura digital, combinando ambos dentro de
-                una misma serie para crear contrastes texturales y temporales.
-              </p>
-              <p>
-                Comisiones, colaboraciones y consultas editoriales son bienvenidas.
+                medios editoriales independientes. Desde 2020 desarrolla una práctica
+                fotográfica independiente, con comisiones editoriales, de retrato y
+                comerciales para clientes del ámbito cultural y las artes.
               </p>
             </div>
 
-            <div className="about__facts reveal">
-              <div className="about__fact">
-                <span className="about__fact-label">Basada en</span>
-                <span className="about__fact-value">Buenos Aires, Argentina</span>
-              </div>
-              <div className="about__fact">
-                <span className="about__fact-label">Práctica</span>
-                <span className="about__fact-value">Retratos · Documental · Conceptual</span>
-              </div>
-              <div className="about__fact">
-                <span className="about__fact-label">Medio</span>
-                <span className="about__fact-value">Analógica 35mm · Formato medio · Digital</span>
-              </div>
-              <div className="about__fact">
-                <span className="about__fact-label">Idiomas</span>
-                <span className="about__fact-value">Español · Inglés</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="about__photo-col reveal">
-            <div className="about__portrait">
-              <div className="about__portrait-placeholder">
-                <span className="about__portrait-label">Retrato</span>
-              </div>
-              <p className="about__photo-caption">Mariana Rasdolsky, Buenos Aires — 2024</p>
-            </div>
+            <table className="about__facts">
+              <tbody>
+                <tr>
+                  <td className="about__fact-label">Basada en</td>
+                  <td className="about__fact-value">Buenos Aires, Argentina</td>
+                </tr>
+                <tr>
+                  <td className="about__fact-label">Práctica</td>
+                  <td className="about__fact-value">Retratos · Documental · Conceptual</td>
+                </tr>
+                <tr>
+                  <td className="about__fact-label">Medio</td>
+                  <td className="about__fact-value">Analógica 35mm · Formato medio · Digital</td>
+                </tr>
+                <tr>
+                  <td className="about__fact-label">Idiomas</td>
+                  <td className="about__fact-value">Español · Inglés</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-    </section>
+      <hr />
+    </div>
   )
 }

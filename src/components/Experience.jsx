@@ -1,115 +1,90 @@
-import { useReveal } from '../hooks/useReveal'
 import './Experience.css'
 
 const professional = [
   {
-    role: 'Fotógrafa independiente',
-    place: 'Práctica independiente',
-    location: 'Buenos Aires, AR',
     period: '2020 — Presente',
+    role: 'Fotógrafa independiente',
+    place: 'Buenos Aires, AR',
     notes: 'Comisiones editoriales, de retrato y comerciales para clientes del ámbito cultural, la moda y las artes.',
   },
   {
-    role: 'Asistente de fotografía',
-    place: 'Estudio Colectivo',
-    location: 'Buenos Aires, AR',
-    period: '2019 — 2020',
-    notes: 'Asistencia a fotógrafos senior en campañas publicitarias y editoriales; gestión de procesos de laboratorio analógico.',
-  },
-  {
-    role: 'Fotógrafa editorial',
-    place: 'Revista Anfibia',
-    location: 'Buenos Aires, AR',
-    period: '2018 — 2019',
-    notes: 'Narrativa visual para periodismo de largo aliento y coberturas culturales.',
-  },
-  {
-    role: 'Exposición colectiva',
-    place: 'Centro Cultural Recoleta',
-    location: 'Buenos Aires, AR',
     period: '2023',
-    notes: '"Cuerpos en Tránsito". Serie Retratos, 12 copias.',
+    role: 'Exposición — "Cuerpos en Tránsito"',
+    place: 'Centro Cultural Recoleta, Buenos Aires',
+    notes: 'Serie Retratos, 12 copias. Exposición colectiva.',
+  },
+  {
+    period: '2019 — 2020',
+    role: 'Asistente de fotografía',
+    place: 'Estudio Colectivo, Buenos Aires',
+    notes: 'Asistencia a fotógrafos senior en campañas publicitarias y editoriales; gestión de laboratorio analógico.',
+  },
+  {
+    period: '2018 — 2019',
+    role: 'Fotógrafa editorial',
+    place: 'Revista Anfibia, Buenos Aires',
+    notes: 'Narrativa visual para periodismo de largo aliento y coberturas culturales.',
   },
 ]
 
 const academic = [
   {
-    title: 'Licenciatura en Fotografía',
-    institution: 'Universidad de Buenos Aires (UBA)',
     period: '2014 — 2018',
-    notes: 'Enfoque en práctica documental y procesos de cuarto oscuro. Tesis sobre el uso del grano como medio expresivo.',
+    role: 'Licenciatura en Fotografía',
+    place: 'Universidad de Buenos Aires (UBA)',
+    notes: 'Tesis: el uso del grano como medio expresivo en la fotografía analógica contemporánea.',
   },
   {
-    title: 'Seminario: Fotografía documental',
-    institution: 'FOLA — Fototeca Latinoamericana',
-    period: '2022',
-    notes: 'Intensivo con Jorge Piccini — el testigo, la memoria y la ética de la representación.',
-  },
-  {
-    title: 'Taller: Retrato e identidad',
-    institution: 'ICI Instituto de Cooperación',
     period: '2023',
-    notes: 'Taller de seis semanas explorando la identidad construida en el retrato fotográfico.',
+    role: 'Taller: Retrato e identidad',
+    place: 'ICI Instituto de Cooperación',
+    notes: 'Seis semanas explorando la identidad construida en el retrato fotográfico.',
   },
   {
-    title: 'Masterclass: Archivo y memoria',
-    institution: 'Centro de Arte y Fotografía',
+    period: '2022',
+    role: 'Seminario: Fotografía documental',
+    place: 'FOLA — Fototeca Latinoamericana',
+    notes: 'Con Jorge Piccini — el testigo, la memoria y la ética de la representación.',
+  },
+  {
     period: '2021',
+    role: 'Masterclass: Archivo y memoria',
+    place: 'Centro de Arte y Fotografía',
     notes: 'Prácticas de archivo y las dimensiones políticas de la memoria fotográfica.',
   },
 ]
 
-function Entry({ entry, type }) {
+function ExpEntry({ entry }) {
   return (
-    <div className="exp__entry reveal">
-      <div className="exp__entry-header">
-        <span className="exp__period">{entry.period}</span>
-        <div className="exp__dot-line" />
-      </div>
-      <div className="exp__entry-body">
-        <h3 className="exp__role">{type === 'professional' ? entry.role : entry.title}</h3>
-        <p className="exp__place">
-          {type === 'professional' ? entry.place : entry.institution}
-          {entry.location && <span className="exp__location"> — {entry.location}</span>}
-        </p>
-        <p className="exp__notes">{entry.notes}</p>
-      </div>
+    <div className="exp-entry">
+      <p className="exp-entry__period">{entry.period}</p>
+      <p className="exp-entry__role">{entry.role}</p>
+      <p className="exp-entry__place">{entry.place}</p>
+      <p className="exp-entry__notes">{entry.notes}</p>
     </div>
   )
 }
 
 export default function Experience() {
-  const ref = useReveal(0.06)
-
   return (
-    <section className="exp section" id="experience" ref={ref}>
-      <div className="section-inner">
-        <p className="section-label reveal">03 — Experiencia</p>
-
-        <h2 className="exp__heading reveal">Trayectoria</h2>
-
-        <div className="exp__columns">
-          <div className="exp__col">
-            <h3 className="exp__col-title reveal">Profesional</h3>
-            <div className="exp__list">
-              {professional.map((e, i) => (
-                <Entry key={i} entry={e} type="professional" />
-              ))}
-            </div>
-          </div>
-
-          <div className="exp__divider" />
-
-          <div className="exp__col">
-            <h3 className="exp__col-title reveal">Académica</h3>
-            <div className="exp__list">
-              {academic.map((e, i) => (
-                <Entry key={i} entry={e} type="academic" />
-              ))}
-            </div>
-          </div>
+    <div id="experience" className="exp-wrap">
+      {/* Professional */}
+      <div className="section col2" style={{ paddingBottom: '0' }}>
+        <p className="label">Experiencia</p>
+        <div className="exp-list">
+          {professional.map((e, i) => <ExpEntry key={i} entry={e} />)}
         </div>
       </div>
-    </section>
+      <hr />
+
+      {/* Academic */}
+      <div className="section col2" style={{ paddingBottom: '0' }}>
+        <p className="label">Formación</p>
+        <div className="exp-list">
+          {academic.map((e, i) => <ExpEntry key={i} entry={e} />)}
+        </div>
+      </div>
+      <hr />
+    </div>
   )
 }

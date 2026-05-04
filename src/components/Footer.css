@@ -1,20 +1,12 @@
 .footer {
-  padding: 2rem var(--page-x);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem var(--page-x);
   border-top: 1px solid var(--border);
-}
-
-.footer__inner {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--muted);
   max-width: var(--max-w);
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.footer__copy,
-.footer__made {
-  font-size: 0.62rem;
-  letter-spacing: 0.14em;
-  color: var(--muted);
 }
