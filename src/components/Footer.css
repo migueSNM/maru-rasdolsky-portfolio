@@ -14,7 +14,7 @@
 
 .footer__copy,
 .footer__made {
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
   color: var(--muted);
 }

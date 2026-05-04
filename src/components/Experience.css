@@ -1,14 +1,9 @@
-.exp {
-  border-top: 1px solid var(--border);
-}
-
 .exp__heading {
-  font-family: var(--font-serif);
-  font-size: clamp(3rem, 7vw, 6.5rem);
-  font-weight: 300;
+  font-size: clamp(2.8rem, 7vw, 6.5rem);
+  font-weight: 200;
   line-height: 1;
-  letter-spacing: -0.02em;
-  color: var(--white);
+  letter-spacing: -0.03em;
+  color: var(--text);
   margin-bottom: 5rem;
 }
 
@@ -27,13 +22,13 @@
 }
 
 .exp__col-title {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 400;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 2.5rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0.875rem;
   border-bottom: 1px solid var(--border);
 }
 
@@ -42,28 +37,25 @@
 .exp__list {
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
 
 .exp__entry {
-  padding: 2rem 0;
+  padding: 1.75rem 0;
   border-bottom: 1px solid var(--border);
 }
 
-.exp__entry:first-child {
-  padding-top: 0;
-}
+.exp__entry:first-child { padding-top: 0; }
 
 .exp__entry-header {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
 }
 
 .exp__period {
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
   color: var(--muted);
   white-space: nowrap;
   flex-shrink: 0;
@@ -75,13 +67,11 @@
   background: var(--border);
 }
 
-.exp__role,
-.exp__title {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
+.exp__role {
+  font-size: 1rem;
   font-weight: 400;
-  color: var(--white);
-  margin-bottom: 0.25rem;
+  color: var(--text);
+  margin-bottom: 0.2rem;
   line-height: 1.3;
 }
 
@@ -89,12 +79,10 @@
   font-size: 0.8125rem;
   font-weight: 300;
   color: var(--dim);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
 }
 
-.exp__location {
-  color: var(--muted);
-}
+.exp__location { color: var(--muted); }
 
 .exp__notes {
   font-size: 0.8125rem;
@@ -110,8 +98,5 @@
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-
-  .exp__divider {
-    display: none;
-  }
+  .exp__divider { display: none; }
 }

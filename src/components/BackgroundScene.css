@@ -1,0 +1,15 @@
+.bg-scene {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  transition: background-color 1.1s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: background-color;
+}
+
+/* One color per section — background transitions as you scroll */
+.bg-scene--top,
+.bg-scene--hero       { background-color: var(--bg-hero); }
+.bg-scene--work       { background-color: var(--bg-work); }
+.bg-scene--about      { background-color: var(--bg-about); }
+.bg-scene--experience { background-color: var(--bg-experience); }
+.bg-scene--contact    { background-color: var(--bg-contact); }
