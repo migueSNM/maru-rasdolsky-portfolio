@@ -6,38 +6,25 @@ export default function Contact() {
       <div className="section col2">
         <p className="label">Contacto</p>
         <div className="contact__content">
-          <a href="mailto:contacto@marianarasdolsky.com" className="contact__email">
-            contacto@marianarasdolsky.com
+          <a href="mailto:marurasdolsky@gmail.com" className="contact__email">
+            marurasdolsky@gmail.com
           </a>
 
           <div className="contact__rows">
             <div className="contact__row">
               <span className="contact__row-label">Ubicación</span>
-              <span>Buenos Aires, Argentina</span>
-            </div>
-            <div className="contact__row">
-              <span className="contact__row-label">Disponibilidad</span>
-              <span>Disponible para comisiones y colaboraciones</span>
+              <span>CABA, Buenos Aires, Argentina</span>
             </div>
             <div className="contact__row">
               <span className="contact__row-label">Redes</span>
               <span>
                 <a
-                  href="https://www.instagram.com"
+                  href="https://www.instagram.com/marurasdolsky/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact__social"
                 >
                   Instagram
-                </a>
-                {' · '}
-                <a
-                  href="https://www.behance.net"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact__social"
-                >
-                  Behance
                 </a>
               </span>
             </div>

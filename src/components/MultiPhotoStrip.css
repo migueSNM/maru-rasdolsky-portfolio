@@ -1,0 +1,33 @@
+.multi-photo-strip {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  overflow: hidden;
+}
+
+.multi-photo-strip__item {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #d8d8d8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.multi-photo-strip__item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.multi-photo-strip__label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #999;
+  user-select: none;
+}

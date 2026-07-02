@@ -9,20 +9,19 @@
 /* ── Entry ────────────────────────────────────── */
 
 .work-entry {
-  padding: 0 var(--page-x);
   max-width: var(--max-w);
   margin: 0 auto;
 }
 
-.work-entry__inner {
+/* Info: number label + details, same col2 rhythm as the rest of the page */
+.work-entry__info {
   display: grid;
-  grid-template-columns: 28fr 45fr 25fr;
+  grid-template-columns: 28fr 68fr;
   gap: 2rem;
-  padding: clamp(2.5rem, 4vw, 4rem) 0;
-  align-items: start;
+  padding: clamp(2rem, 3.5vw, 3.5rem) var(--page-x) clamp(1.25rem, 2vw, 2rem);
 }
 
-/* ── Info column ──────────────────────────────── */
+/* ── Details ──────────────────────────────────── */
 
 .work-entry__title {
   font-size: 0.8125rem;
@@ -54,47 +53,11 @@
   color: var(--muted);
 }
 
-/* ── Placeholders ─────────────────────────────── */
-
-.work-entry__main-img {
-  width: 100%;
-}
-
-.work-entry__secondary {
-  width: 100%;
-}
-
-.work-entry__placeholder {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  background: #d8d8d8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.work-entry__placeholder--sm {
-  aspect-ratio: 2 / 3;
-}
-
-.work-entry__placeholder-label {
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #999;
-}
-
 /* ── Responsive ───────────────────────────────── */
 
-@media (max-width: 900px) {
-  .work-entry__inner {
-    grid-template-columns: 1fr 1fr;
-  }
-  .work-entry__info { grid-column: 1 / -1; }
-}
-
 @media (max-width: 560px) {
-  .work-entry__inner {
+  .work-entry__info {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
 }
