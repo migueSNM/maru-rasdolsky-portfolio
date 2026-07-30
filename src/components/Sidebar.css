@@ -1,0 +1,161 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-w);
+  height: 100vh;
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border);
+  background: var(--white);
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.sidebar__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar__brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: opacity 0.15s;
+}
+
+.sidebar__brand-link:hover { opacity: 0.5; }
+
+.sidebar__avatar {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #d8d8d8;
+}
+
+.sidebar__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sidebar__brand {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sidebar__toggle {
+  display: none;
+}
+
+.sidebar__nav {
+  margin-top: 2.5rem;
+  flex: 1;
+}
+
+.sidebar__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.sidebar__link {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--dim);
+  transition: opacity 0.15s, color 0.15s;
+}
+
+.sidebar__link:hover { opacity: 0.6; }
+
+.sidebar__link--active {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sidebar__contact {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--muted);
+}
+
+.sidebar__email {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.15s;
+}
+
+.sidebar__email:hover { opacity: 0.5; }
+
+.sidebar__social {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.15s;
+  align-self: flex-start;
+}
+
+.sidebar__social:hover { opacity: 0.5; }
+
+.sidebar__copyright {
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: var(--nav-h);
+    padding: 0 var(--page-x);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .sidebar__toggle {
+    display: inline-block;
+    border: none;
+    background: none;
+    font: inherit;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text);
+    cursor: pointer;
+  }
+
+  .sidebar__nav,
+  .sidebar__contact {
+    display: none;
+  }
+
+  .sidebar--expanded {
+    height: 100vh;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.25rem var(--page-x) 2rem;
+    overflow-y: auto;
+  }
+
+  .sidebar--expanded .sidebar__nav,
+  .sidebar--expanded .sidebar__contact {
+    display: block;
+  }
+}

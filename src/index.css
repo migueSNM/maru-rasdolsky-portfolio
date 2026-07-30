@@ -36,9 +36,13 @@
 
   --font:   'Favorit Variable', 'Favorit', 'Plus Jakarta Sans', system-ui, sans-serif;
 
-  --nav-h:  44px;
-  --page-x: clamp(1.25rem, 4vw, 4rem);
-  --max-w:  1440px;
+  --nav-h:     44px;
+  --sidebar-w: 260px;
+  --page-x:    clamp(1.25rem, 4vw, 4rem);
+  --max-w:     1440px;
+
+  --z-sidepanel: 200;
+  --z-lightbox:  300;
 }
 
 *, *::before, *::after {
