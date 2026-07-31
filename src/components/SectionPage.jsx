@@ -16,7 +16,7 @@ export default function SectionPage() {
         <p className="label">{data.navLabel}</p>
         <p className="section-page__description">{data.description}</p>
       </div>
-      <PhotoGrid photos={data.gallery} />
+      <PhotoGrid photos={data.gallery} variant={data.layout} />
     </div>
   )
 }
