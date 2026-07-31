@@ -72,8 +72,15 @@ export default function Lightbox({ photos = [], index, onClose, onNavigate }) {
         aria-modal="true"
         aria-label={photo.label || photo.alt || ''}
       >
-        <button type="button" className="lightbox__close label" onClick={onClose} autoFocus>
-          Cerrar <span className="arrow">→</span>
+        <button
+          type="button"
+          className="lightbox__close"
+          onClick={onClose}
+          autoFocus
+          aria-label="Cerrar"
+        >
+          <span className="lightbox__close-bar" />
+          <span className="lightbox__close-bar" />
         </button>
 
         <div className="lightbox__stage">
@@ -105,7 +112,7 @@ export default function Lightbox({ photos = [], index, onClose, onNavigate }) {
           </button>
         </div>
 
-        <p className="lightbox__counter label">{index + 1} / {photos.length}</p>
+        <p className="lightbox__description">{photo.description || photo.label}</p>
       </div>
     </div>,
     document.body

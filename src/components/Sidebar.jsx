@@ -40,8 +40,11 @@ export default function Sidebar() {
           className="sidebar__toggle"
           onClick={() => setMobileOpen((o) => !o)}
           aria-expanded={mobileOpen}
+          aria-label={mobileOpen ? 'Cerrar menú' : 'Abrir menú'}
         >
-          {mobileOpen ? 'Cerrar' : 'Índice'}
+          <span className="sidebar__toggle-bar" />
+          <span className="sidebar__toggle-bar" />
+          <span className="sidebar__toggle-bar" />
         </button>
       </div>
 
