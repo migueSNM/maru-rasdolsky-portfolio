@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Lightbox from './Lightbox'
+import { photoSrc } from '../lib/photoSrc'
 import './PhotoGrid.css'
 
 const MOSAIC_PATTERN = ['tall', 'regular', 'regular', 'wide', 'small', 'blank']
@@ -42,7 +43,7 @@ export default function PhotoGrid({ photos = [], variant }) {
                     aria-label={item.photo.label || item.photo.alt || `Foto ${item.index + 1}`}
                   >
                     {item.photo.src
-                      ? <img src={item.photo.src} alt={item.photo.alt || item.photo.label || ''} />
+                      ? <img src={photoSrc(item.photo.src)} alt={item.photo.alt || item.photo.label || ''} />
                       : <span className="photo-grid__label">{item.photo.label}</span>
                     }
                   </button>
@@ -57,7 +58,7 @@ export default function PhotoGrid({ photos = [], variant }) {
                 aria-label={photo.label || photo.alt || `Foto ${i + 1}`}
               >
                 {photo.src
-                  ? <img src={photo.src} alt={photo.alt || photo.label || ''} />
+                  ? <img src={photoSrc(photo.src)} alt={photo.alt || photo.label || ''} />
                   : <span className="photo-grid__label">{photo.label}</span>
                 }
               </button>

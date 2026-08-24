@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { lockScroll, unlockScroll } from '../lib/scrollLock'
+import { photoSrc } from '../lib/photoSrc'
 import './Lightbox.css'
 
 const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
@@ -96,7 +97,7 @@ export default function Lightbox({ photos = [], index, onClose, onNavigate }) {
 
           <div className="lightbox__image">
             {photo.src
-              ? <img src={photo.src} alt={photo.alt || photo.label || ''} />
+              ? <img src={photoSrc(photo.src)} alt={photo.alt || photo.label || ''} />
               : <span className="lightbox__label">{photo.label}</span>
             }
           </div>

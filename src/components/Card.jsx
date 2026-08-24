@@ -1,4 +1,5 @@
 import './Card.css'
+import { photoSrc } from '../lib/photoSrc'
 
 export default function Card({ tag, title, subtitle, brief, gallery, onOpen }) {
   const photo = gallery?.[0]
@@ -8,7 +9,7 @@ export default function Card({ tag, title, subtitle, brief, gallery, onOpen }) {
       <button type="button" className="card__trigger" onClick={onOpen} aria-label={title}>
         <div className="card__photo">
           {photo?.src
-            ? <img src={photo.src} alt={photo.alt || photo.label || ''} />
+            ? <img src={photoSrc(photo.src)} alt={photo.alt || photo.label || ''} />
             : <span className="card__photo-label">{photo?.label}</span>
           }
         </div>

@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import './Sidebar.css'
 
-const NAV_ITEMS = [
-  { label: 'Biografía', to: '/biografia' },
+export const NAV_ITEMS = [
   { label: 'Gastronomía', to: '/gastronomia' },
   { label: 'Foto fija', to: '/foto-fija' },
   { label: 'Avant premiere', to: '/avant-premiere' },

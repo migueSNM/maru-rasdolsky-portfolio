@@ -1,4 +1,5 @@
 import Experience from './Experience'
+import ProjectTiles from './ProjectTiles'
 import './Biografia.css'
 
 export default function Biografia() {
@@ -24,8 +25,7 @@ export default function Biografia() {
           </div>
         </div>
       </div>
-      <hr />
-      <Experience />
+      <ProjectTiles />
     </div>
   )
 }

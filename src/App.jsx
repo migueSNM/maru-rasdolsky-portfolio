@@ -13,8 +13,7 @@ export default function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/biografia" element={<Biografia />} />
+        <Route path="/" element={<Biografia />} />
         <Route path="/proyectos-personales" element={<ProyectosPersonales />} />
         <Route path="/proyectos-personales/:slug" element={<ProyectoDetalle />} />
         {sectionSlugs.map((slug) => (
