@@ -52,56 +52,63 @@
 }
 
 .photo-grid--mosaic {
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: clamp(70px, 8vw, 140px);
-  gap: clamp(1.5rem, 3vw, 3.5rem);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: clamp(56px, 6vw, 88px);
+  grid-auto-flow: dense;
+  gap: clamp(0.6rem, 1vw, 1rem);
+  padding-bottom: clamp(3rem, 5vw, 5rem);
 }
 
 .photo-grid--mosaic .photo-grid__tile {
-  aspect-ratio: auto;
   width: 100%;
   height: 100%;
+  display: block;
+  margin: 0;
+  grid-column: span 1;
+  grid-row: span 4;
 }
 
-.photo-grid--mosaic .photo-grid__tile--small { grid-row: span 1; }
-.photo-grid--mosaic .photo-grid__tile--regular { grid-row: span 2; }
-.photo-grid--mosaic .photo-grid__tile--tall { grid-row: span 3; }
+.photo-grid--mosaic .photo-grid__tile img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-grid--mosaic .photo-grid__tile--small { grid-row: span 3; }
+.photo-grid--mosaic .photo-grid__tile--tall { grid-row: span 6; }
+.photo-grid--mosaic .photo-grid__tile--large {
+  grid-column: span 2;
+  grid-row: span 5;
+}
 .photo-grid--mosaic .photo-grid__tile--wide {
   grid-column: span 2;
-  grid-row: span 2;
-}
-
-.photo-grid--mosaic .photo-grid__tile--blank {
-  grid-row: span 2;
-  background: transparent;
-  cursor: default;
-  pointer-events: none;
+  grid-row: span 4;
 }
 
 @media (max-width: 768px) {
   .photo-grid--mosaic {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: auto;
-    gap: clamp(0.75rem, 1.5vw, 1.25rem);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: clamp(58px, 11vw, 88px);
   }
 
-  .photo-grid--mosaic .photo-grid__tile,
-  .photo-grid--mosaic .photo-grid__tile--small,
-  .photo-grid--mosaic .photo-grid__tile--regular,
-  .photo-grid--mosaic .photo-grid__tile--tall,
-  .photo-grid--mosaic .photo-grid__tile--wide {
-    aspect-ratio: 4 / 5;
-    grid-column: auto;
-    grid-row: auto;
-  }
-
-  .photo-grid--mosaic .photo-grid__tile--blank {
-    display: none;
-  }
+  .photo-grid--mosaic .photo-grid__tile--large,
+  .photo-grid--mosaic .photo-grid__tile--wide { grid-column: span 2; }
 }
 
 @media (max-width: 560px) {
   .photo-grid--mosaic {
-    grid-template-columns: 1fr;
+    display: block;
   }
+
+  .photo-grid--mosaic .photo-grid__tile,
+  .photo-grid--mosaic .photo-grid__tile--small,
+  .photo-grid--mosaic .photo-grid__tile--tall,
+  .photo-grid--mosaic .photo-grid__tile--large,
+  .photo-grid--mosaic .photo-grid__tile--wide {
+    height: auto;
+    aspect-ratio: auto;
+    margin-bottom: clamp(0.75rem, 3vw, 1rem);
+  }
+
+  .photo-grid--mosaic .photo-grid__tile img { height: auto; }
 }

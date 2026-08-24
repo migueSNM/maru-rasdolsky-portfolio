@@ -3,52 +3,40 @@ import Lightbox from './Lightbox'
 import { photoSrc } from '../lib/photoSrc'
 import './PhotoGrid.css'
 
-const MOSAIC_PATTERN = ['tall', 'regular', 'regular', 'wide', 'small', 'blank']
-
-function buildMosaicItems(photos) {
-  const items = []
-  let photoIndex = 0
-  let step = 0
-  while (photoIndex < photos.length) {
-    const size = MOSAIC_PATTERN[step % MOSAIC_PATTERN.length]
-    step++
-    if (size === 'blank') {
-      items.push({ type: 'blank', key: `blank-${step}` })
-    } else {
-      items.push({ type: 'photo', size, photo: photos[photoIndex], index: photoIndex })
-      photoIndex++
-    }
-  }
-  return items
-}
+const FLOW_PATTERN = [
+  'large', 'regular', 'tall', 'small', 'regular', 'tall', 'regular', 'wide',
+  'small', 'tall', 'large', 'regular', 'regular', 'small', 'tall', 'regular',
+  'large', 'tall', 'small', 'regular', 'tall', 'regular', 'large', 'small',
+]
 
 export default function PhotoGrid({ photos = [], variant }) {
   const [openIndex, setOpenIndex] = useState(null)
   const isMosaic = variant === 'mosaic'
-  const mosaicItems = isMosaic ? buildMosaicItems(photos) : null
+
+  function renderTile(photo, index, className = '') {
+    const flowClass = isMosaic ? `photo-grid__tile--${photo.layout || FLOW_PATTERN[index % FLOW_PATTERN.length]}` : ''
+
+    return (
+      <button
+        key={index}
+        type="button"
+        className={`photo-grid__tile${flowClass ? ` ${flowClass}` : ''}${className ? ` ${className}` : ''}`}
+        onClick={() => setOpenIndex(index)}
+        aria-label={photo.label || photo.alt || `Foto ${index + 1}`}
+      >
+        {photo.src
+          ? <img src={photoSrc(photo.src)} alt={photo.alt || photo.label || ''} />
+          : <span className="photo-grid__label">{photo.label}</span>
+        }
+      </button>
+    )
+  }
 
   return (
     <>
       <div className={`photo-grid${isMosaic ? ' photo-grid--mosaic' : ''}`}>
         {isMosaic
-          ? mosaicItems.map((item) =>
-              item.type === 'blank'
-                ? <div key={item.key} className="photo-grid__tile photo-grid__tile--blank" aria-hidden="true" />
-                : (
-                  <button
-                    key={item.index}
-                    type="button"
-                    className={`photo-grid__tile photo-grid__tile--${item.size}`}
-                    onClick={() => setOpenIndex(item.index)}
-                    aria-label={item.photo.label || item.photo.alt || `Foto ${item.index + 1}`}
-                  >
-                    {item.photo.src
-                      ? <img src={photoSrc(item.photo.src)} alt={item.photo.alt || item.photo.label || ''} />
-                      : <span className="photo-grid__label">{item.photo.label}</span>
-                    }
-                  </button>
-                )
-            )
+          ? photos.map((photo, index) => renderTile(photo, index))
           : photos.map((photo, i) => (
               <button
                 key={i}
