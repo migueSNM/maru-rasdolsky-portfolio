@@ -28,7 +28,7 @@
 */
 
 :root {
-  --white:  #fafafa;
+  --white:  #ffffff;
   --text:   #111111;
   --dim:    #666666;
   --muted:  #999999;
@@ -39,9 +39,9 @@
   --nav-h:     44px;
   --sidebar-w: 260px;
   --page-x:    clamp(1.25rem, 4vw, 4rem);
+  --edge:      clamp(16px, 3.5vw, 56px);
   --max-w:     1440px;
 
-  --z-sidepanel: 200;
   --z-lightbox:  300;
 }
 

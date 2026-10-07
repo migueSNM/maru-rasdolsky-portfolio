@@ -64,56 +64,47 @@ export default function Lightbox({ photos = [], index, onClose, onNavigate }) {
   const photo = photos[index]
 
   return createPortal(
-    <div className="lightbox-root lightbox-root--open">
-      <div className="lightbox__backdrop" onClick={onClose} />
-      <div
-        ref={lightboxRef}
-        className="lightbox"
-        role="dialog"
-        aria-modal="true"
-        aria-label={photo.label || photo.alt || ''}
+    <div
+      ref={lightboxRef}
+      className="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label={photo.label || photo.alt || ''}
+    >
+      <button
+        type="button"
+        className="lightbox__image"
+        onClick={() => (index < photos.length - 1 ? onNavigate(index + 1) : onClose())}
+        aria-label={index < photos.length - 1 ? 'Foto siguiente' : 'Cerrar'}
       >
-        <button
-          type="button"
-          className="lightbox__close"
-          onClick={onClose}
-          autoFocus
-          aria-label="Cerrar"
-        >
-          <span className="lightbox__close-bar" />
-          <span className="lightbox__close-bar" />
-        </button>
+        {photo.src
+          ? <img src={photoSrc(photo.src)} alt={photo.alt || photo.label || ''} />
+          : <span className="lightbox__label">{photo.label}</span>
+        }
+      </button>
 
-        <div className="lightbox__stage">
+      <div className="lightbox__controls">
+        <p>
           <button
             type="button"
-            className="lightbox__nav lightbox__nav--prev"
             onClick={() => onNavigate(index - 1)}
             disabled={index === 0}
-            aria-label="Foto anterior"
           >
-            ←
+            Anterior
           </button>
-
-          <div className="lightbox__image">
-            {photo.src
-              ? <img src={photoSrc(photo.src)} alt={photo.alt || photo.label || ''} />
-              : <span className="lightbox__label">{photo.label}</span>
-            }
-          </div>
-
+          <span aria-hidden="true"> / </span>
           <button
             type="button"
-            className="lightbox__nav lightbox__nav--next"
             onClick={() => onNavigate(index + 1)}
             disabled={index === photos.length - 1}
-            aria-label="Foto siguiente"
           >
-            →
+            Siguiente
           </button>
-        </div>
-
-        <p className="lightbox__description">{photo.description || photo.label}</p>
+          <span className="lightbox__count">{index + 1} / {photos.length}</span>
+        </p>
+        <button type="button" onClick={onClose} autoFocus>
+          Cerrar
+        </button>
       </div>
     </div>,
     document.body

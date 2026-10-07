@@ -1,25 +1,20 @@
-.biografia__layout {
+/*
+  Two columns: portrait + CV labels on the left, text on the right.
+  Everything below the portrait lines up with the bio text.
+*/
+.biografia__grid {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: clamp(2rem, 4vw, 3.5rem);
-  align-items: start;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  column-gap: clamp(1.5rem, 4vw, 4rem);
+  row-gap: clamp(3rem, 6vw, 5rem);
+  padding: 0 var(--edge) clamp(3rem, 6vw, 5rem);
+  max-width: 1200px;
 }
 
-.biografia__photo-placeholder {
-  width: clamp(160px, 16vw, 220px);
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  overflow: hidden;
-  background: #d8d8d8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.biografia__photo-placeholder img {
+.biografia__portrait {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
 }
 
 .biografia__text {
@@ -27,18 +22,77 @@
   flex-direction: column;
   gap: 1rem;
   font-size: 0.9375rem;
-  font-weight: 300;
-  line-height: 1.75;
+  line-height: 1.7;
+  max-width: 36rem;
+}
+
+/* Each CV block spans both columns: label left, entries right */
+.biografia__cv {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.biografia__cv .label {
+  font-size: 0.75rem;
+}
+
+.biografia__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 36rem;
+}
+
+.biografia__entry {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 1rem;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.biografia__year {
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 0.1rem;
+}
+
+.biografia__role {
+  font-weight: 400;
   color: var(--text);
-  max-width: 40rem;
+}
+
+.biografia__place {
+  color: var(--dim);
+}
+
+.biografia__note {
+  margin-top: 0.35rem;
+  color: var(--dim);
 }
 
 @media (max-width: 768px) {
-  .biografia__layout {
+  .biografia__grid {
     grid-template-columns: 1fr;
+    row-gap: 1.5rem;
   }
 
-  .biografia__photo-placeholder {
-    width: 140px;
+  .biografia__cv {
+    grid-template-columns: 1fr;
+    row-gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .biografia__entry {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
   }
 }

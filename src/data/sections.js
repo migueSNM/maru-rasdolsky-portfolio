@@ -2,135 +2,182 @@ export const sections = {
   gastronomia: {
     slug: "gastronomia",
     navLabel: "Gastronomía",
-    coverImage: "/photos/gastronomia/01.jpg",
-    layout: "mosaic",
     description:
       "Fotografía gastronómica para restaurantes, chefs y marcas de alimentos. Énfasis en la textura, la luz natural y el producto.",
     gallery: [
       {
         label: "Gastronomía 1",
         src: "photos/gastronomia/01.jpg",
+        width: 1616,
+        height: 2400,
         description: "Descripcion pendiente",
       },
       {
         label: "Gastronomía 2",
         src: "photos/gastronomia/02.jpg",
+        width: 1600,
+        height: 2400,
         description: "Descripcion pendiente",
       },
       {
         label: "Gastronomía 3",
         src: "photos/gastronomia/03.jpg",
+        width: 1600,
+        height: 2400,
         description: "Descripcion pendiente",
       },
       {
         label: "Gastronomía 4",
         src: "photos/gastronomia/04.jpg",
+        width: 1600,
+        height: 2400,
         description: "Descripcion pendiente",
       },
       {
         label: "Gastronomía 5",
         src: "photos/gastronomia/05.jpg",
+        width: 1600,
+        height: 2400,
         description: "Descripcion pendiente",
       },
       {
         label: "Gastronomía 8",
         src: "photos/gastronomia/08.jpg",
+        width: 2400,
+        height: 1600,
         description: "Descripción pendiente.",
-        layout: "wide",
       },
       {
         label: "Gastronomía 6",
         src: "photos/gastronomia/06.jpg",
+        width: 1600,
+        height: 2400,
         description: "Descripción pendiente.",
       },
       {
         label: "Gastronomía 7",
         src: "photos/gastronomia/07.jpg",
+        width: 1600,
+        height: 2400,
         description: "Descripción pendiente.",
       },
       {
         label: "Gastronomía 9",
         src: "photos/gastronomia/09.jpg",
+        width: 1600,
+        height: 2400,
         description: "Descripción pendiente.",
       },
       {
         label: "Gastronomía 10",
         src: "photos/gastronomia/10.jpg",
+        width: 1600,
+        height: 2400,
         description: "Descripción pendiente.",
       },
       {
         label: "Gastronomía 11",
         src: "photos/gastronomia/11.jpg",
+        width: 1600,
+        height: 2400,
         description: "Descripción pendiente.",
       },
       {
         label: "Gastronomía 12",
         src: "photos/gastronomia/12.jpg",
+        width: 1600,
+        height: 2400,
         description: "Descripción pendiente.",
       },
       {
         label: "Gastronomía 13",
         src: "photos/gastronomia/13.jpg",
+        width: 1600,
+        height: 2400,
         description: "Descripción pendiente.",
       },
       {
         label: "Gastronomía 14",
         src: "photos/gastronomia/14.jpg",
+        width: 1594,
+        height: 2400,
         description: "Descripción pendiente.",
       },
       {
         label: "Gastronomía 15",
         src: "photos/gastronomia/15.jpg",
+        width: 1594,
+        height: 2400,
         description: "Descripción pendiente.",
       },
       {
         label: "Gastronomía 16",
         src: "photos/gastronomia/16.jpg",
+        width: 1594,
+        height: 2400,
         description: "Descripción pendiente.",
       },
       {
         label: "Gastronomía 17",
         src: "photos/gastronomia/17.jpg",
+        width: 1768,
+        height: 2400,
         description: "Descripción pendiente.",
       },
       {
         label: "Gastronomía 18",
         src: "photos/gastronomia/18.jpg",
+        width: 1594,
+        height: 2400,
         description: "Descripción pendiente.",
       },
       {
         label: "Gastronomía 19",
         src: "photos/gastronomia/19.jpg",
+        width: 1574,
+        height: 2400,
         description: "Descripción pendiente.",
       },
       {
         label: "Gastronomía 20",
         src: "photos/gastronomia/20.jpg",
+        width: 1594,
+        height: 2400,
         description: "Descripción pendiente.",
       },
       {
         label: "Gastronomía 21",
         src: "photos/gastronomia/21.jpg",
+        width: 1549,
+        height: 2400,
         description: "Descripción pendiente.",
       },
       {
         label: "Gastronomía 22",
         src: "photos/gastronomia/22.jpg",
+        width: 1594,
+        height: 2400,
         description: "Descripción pendiente.",
       },
       {
         label: "Gastronomía 23",
         src: "photos/gastronomia/23.jpg",
+        width: 1594,
+        height: 2400,
         description: "Descripción pendiente.",
       },
       {
         label: "Gastronomía 24",
         src: "photos/gastronomia/24.jpg",
+        width: 1594,
+        height: 2400,
         description: "Descripción pendiente.",
       },
       {
         label: "Gastronomía 25",
         src: "photos/gastronomia/25.jpg",
+        width: 1747,
+        height: 2400,
         description: "Descripción pendiente.",
       },
     ],
@@ -138,7 +185,6 @@ export const sections = {
   "foto-fija": {
     slug: "foto-fija",
     navLabel: "Foto fija",
-    coverImage: null,
     description:
       "Registro fotográfico de producción para cine y televisión: el detrás de escena y los momentos clave del rodaje.",
     gallery: [
@@ -153,7 +199,6 @@ export const sections = {
   "avant-premiere": {
     slug: "avant-premiere",
     navLabel: "Avant premiere",
-    coverImage: null,
     description:
       "Cobertura fotográfica de avant premieres: alfombra roja, invitados y el ambiente previo al estreno.",
     gallery: [
@@ -167,7 +212,6 @@ export const sections = {
   "foto-de-prensa": {
     slug: "foto-de-prensa",
     navLabel: "Foto de prensa",
-    coverImage: null,
     description:
       "Fotografía de prensa para medios y gacetillas: retratos y coberturas de eventos con fines editoriales.",
     gallery: [
@@ -182,7 +226,6 @@ export const sections = {
   "shows-en-vivo": {
     slug: "shows-en-vivo",
     navLabel: "Shows en vivo",
-    coverImage: null,
     description:
       "Cobertura de recitales y shows en vivo: la energía del escenario y el público desde el pozo.",
     gallery: [
@@ -196,7 +239,6 @@ export const sections = {
   muestras: {
     slug: "muestras",
     navLabel: "Muestras",
-    coverImage: null,
     description:
       "Registro de muestras y exposiciones: obra en sala, montaje e inauguraciones.",
     gallery: [
@@ -210,7 +252,6 @@ export const sections = {
   radio: {
     slug: "radio",
     navLabel: "Radio",
-    coverImage: null,
     description:
       "Fotografía en estudios de radio: programas en vivo, entrevistas e invitados al aire.",
     gallery: [
@@ -224,7 +265,6 @@ export const sections = {
   teatro: {
     slug: "teatro",
     navLabel: "Teatro",
-    coverImage: null,
     description:
       "Fotografía de teatro: funciones, ensayos y retratos de elenco en sala.",
     gallery: [
@@ -239,7 +279,6 @@ export const sections = {
   publicaciones: {
     slug: "publicaciones",
     navLabel: "Publicaciones",
-    coverImage: null,
     description:
       "Trabajo publicado en medios gráficos y digitales: editoriales, notas y portadas.",
     gallery: [
@@ -253,7 +292,6 @@ export const sections = {
   "comunicacion-y-redes": {
     slug: "comunicacion-y-redes",
     navLabel: "Comunicación y redes",
-    coverImage: null,
     description:
       "Contenido fotográfico para comunicación y redes sociales: campañas, piezas y contenido de marca.",
     gallery: [
@@ -267,7 +305,6 @@ export const sections = {
   indumentaria: {
     slug: "indumentaria",
     navLabel: "Indumentaria",
-    coverImage: null,
     description:
       "Fotografía de indumentaria: lookbooks, catálogo y campañas para marcas de moda.",
     gallery: [

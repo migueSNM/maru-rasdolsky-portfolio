@@ -1,0 +1,16 @@
+/* Masonry wall: tight even gaps (column count is set in Masonry.jsx) */
+.masonry {
+  --grid-gap: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--grid-gap);
+  padding: 0 var(--edge) var(--edge);
+}
+
+.masonry__column {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--grid-gap);
+}

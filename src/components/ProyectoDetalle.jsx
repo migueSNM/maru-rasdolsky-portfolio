@@ -11,14 +11,13 @@ export default function ProyectoDetalle() {
 
   return (
     <div className="section-page">
-      <div className="section" style={{ paddingBottom: '1.5rem' }}>
-        <p className="label">
+      <header className="section-page__header">
+        <h1 className="label">
           Proyectos personales <span className="arrow">→</span> {project.title}
-        </p>
+        </h1>
         <p className="section-page__description">{project.description}</p>
-      </div>
-      <hr />
-      <PhotoGrid photos={project.gallery} />
+      </header>
+      <PhotoGrid key={slug} photos={project.gallery} />
     </div>
   )
 }

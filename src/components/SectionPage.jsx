@@ -12,11 +12,11 @@ export default function SectionPage() {
 
   return (
     <div className="section-page">
-      <div className="section col2" style={{ paddingBottom: '1.5rem' }}>
-        <p className="label">{data.navLabel}</p>
+      <header className="section-page__header">
+        <h1 className="label">{data.navLabel}</h1>
         <p className="section-page__description">{data.description}</p>
-      </div>
-      <PhotoGrid photos={data.gallery} variant={data.layout} />
+      </header>
+      <PhotoGrid key={slug} photos={data.gallery} />
     </div>
   )
 }
