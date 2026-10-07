@@ -33,6 +33,12 @@ export const sections = {
         description: "Descripcion pendiente",
       },
       {
+        label: "Gastronomía 8",
+        src: "photos/gastronomia/08.jpg",
+        description: "Descripción pendiente.",
+        layout: "wide",
+      },
+      {
         label: "Gastronomía 6",
         src: "photos/gastronomia/06.jpg",
         description: "Descripción pendiente.",
@@ -40,11 +46,6 @@ export const sections = {
       {
         label: "Gastronomía 7",
         src: "photos/gastronomia/07.jpg",
-        description: "Descripción pendiente.",
-      },
-      {
-        label: "Gastronomía 8",
-        src: "photos/gastronomia/08.jpg",
         description: "Descripción pendiente.",
       },
       {

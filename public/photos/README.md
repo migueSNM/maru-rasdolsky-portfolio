@@ -21,6 +21,6 @@ Then update the matching entry in `src/data/sections.js`. Add the image path to 
 
 `coverImage` is used by the homepage project tile. If it is omitted, the first gallery image is used instead.
 
-The Gastronomía page automatically cycles through a varied editorial layout. To override a specific image's tile size, add `layout: "small"`, `"regular"`, `"tall"`, `"large"`, or `"wide"` to that gallery item.
+The Gastronomía page lays photos out in editorial rows that repeat a pair, a triple, and a single photo with space around it, in gallery order. To give a photo a row of its own, add `layout: "feature"` (offset, with empty space beside it) or `layout: "wide"` (full width, best for landscape photos) to that gallery item.
 
 For personal projects, follow the same pattern in `src/data/personalProjects.js`, using folders such as `public/photos/proyectos-personales/proyecto-1/`. Each personal project can have a `coverImage`; the first available one becomes the cover for the **Proyectos personales** homepage tile.

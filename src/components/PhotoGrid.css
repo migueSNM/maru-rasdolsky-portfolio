@@ -51,64 +51,66 @@
   padding: 0 1rem;
 }
 
+/* Editorial rows (Gastronomía): uncropped photos, generous air, steady rhythm */
 .photo-grid--mosaic {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-auto-rows: clamp(56px, 6vw, 88px);
-  grid-auto-flow: dense;
-  gap: clamp(0.6rem, 1vw, 1rem);
-  padding-bottom: clamp(3rem, 5vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 6vw, 5rem);
 }
 
+.photo-row {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 2rem);
+  align-items: start;
+}
+
+.photo-row--pair > * { grid-column: span 6; }
+.photo-row--triple > * { grid-column: span 4; }
+.photo-row--left > * { grid-column: 2 / span 5; }
+.photo-row--right > * { grid-column: 7 / span 5; }
+.photo-row--wide > * { grid-column: 1 / -1; }
+
 .photo-grid--mosaic .photo-grid__tile {
-  width: 100%;
-  height: 100%;
   display: block;
-  margin: 0;
-  grid-column: span 1;
-  grid-row: span 4;
+  width: 100%;
+  aspect-ratio: auto;
+}
+
+/* Rows share one ratio so their edges line up; singles keep their own. */
+.photo-row--pair .photo-grid__tile,
+.photo-row--triple .photo-grid__tile {
+  aspect-ratio: 2 / 3;
 }
 
 .photo-grid--mosaic .photo-grid__tile img {
-  height: 100%;
-  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
 }
 
-.photo-grid--mosaic .photo-grid__tile--small { grid-row: span 3; }
-.photo-grid--mosaic .photo-grid__tile--tall { grid-row: span 6; }
-.photo-grid--mosaic .photo-grid__tile--large {
-  grid-column: span 2;
-  grid-row: span 5;
+.photo-row--left .photo-grid__tile img,
+.photo-row--right .photo-grid__tile img,
+.photo-row--wide .photo-grid__tile img {
+  height: auto;
 }
-.photo-grid--mosaic .photo-grid__tile--wide {
-  grid-column: span 2;
-  grid-row: span 4;
+
+.photo-grid--mosaic .photo-grid__tile:hover img {
+  opacity: 1;
+  transform: scale(1.02);
 }
 
 @media (max-width: 768px) {
-  .photo-grid--mosaic {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: clamp(58px, 11vw, 88px);
-  }
-
-  .photo-grid--mosaic .photo-grid__tile--large,
-  .photo-grid--mosaic .photo-grid__tile--wide { grid-column: span 2; }
+  .photo-row--triple > * { grid-column: span 6; }
+  .photo-row--triple > :last-child { grid-column: 4 / span 6; }
+  .photo-row--left > *,
+  .photo-row--right > * { grid-column: 1 / -1; }
 }
 
 @media (max-width: 560px) {
-  .photo-grid--mosaic {
-    display: block;
-  }
+  .photo-row > *,
+  .photo-row--triple > :last-child { grid-column: 1 / -1; }
+}
 
-  .photo-grid--mosaic .photo-grid__tile,
-  .photo-grid--mosaic .photo-grid__tile--small,
-  .photo-grid--mosaic .photo-grid__tile--tall,
-  .photo-grid--mosaic .photo-grid__tile--large,
-  .photo-grid--mosaic .photo-grid__tile--wide {
-    height: auto;
-    aspect-ratio: auto;
-    margin-bottom: clamp(0.75rem, 3vw, 1rem);
-  }
-
-  .photo-grid--mosaic .photo-grid__tile img { height: auto; }
+@media (prefers-reduced-motion: reduce) {
+  .photo-grid--mosaic .photo-grid__tile img { transition: none; }
 }
