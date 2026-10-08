@@ -19,3 +19,10 @@
   line-height: 1.5;
   max-width: 36rem;
 }
+
+.section-page__back {
+  color: var(--muted);
+  transition: color 0.15s;
+}
+
+.section-page__back:hover { color: var(--text); }

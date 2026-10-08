@@ -40,7 +40,6 @@
   --sidebar-w: 260px;
   --page-x:    clamp(1.25rem, 4vw, 4rem);
   --edge:      clamp(16px, 3.5vw, 56px);
-  --max-w:     1440px;
 
   --z-lightbox:  300;
 }
@@ -92,22 +91,6 @@ hr {
 ::-webkit-scrollbar       { width: 2px; }
 ::-webkit-scrollbar-track { background: var(--white); }
 ::-webkit-scrollbar-thumb { background: var(--border); }
-
-/* ── Shared two-column layout ─────────────────── */
-
-.col2 {
-  display: grid;
-  grid-template-columns: 28fr 68fr;
-  gap: 2rem;
-}
-
-/* ── Section wrapper ──────────────────────────── */
-
-.section {
-  padding: clamp(3rem, 5vw, 5rem) var(--page-x);
-  max-width: var(--max-w);
-  margin: 0 auto;
-}
 
 /* ── Section label (left column) ──────────────── */
 
