@@ -17,7 +17,7 @@ function hash(text) {
   return Math.abs(h)
 }
 
-export function tileRatio(photo) {
+function tileRatio(photo) {
   const natural = photo.width && photo.height ? photo.height / photo.width : null
   // Landscape photos keep their own shape.
   if (natural && natural < 1) return natural

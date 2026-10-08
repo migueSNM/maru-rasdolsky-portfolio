@@ -1,6 +1,5 @@
 export const personalProjects = [
   {
-    id: 'proyecto-1',
     slug: 'proyecto-1',
     title: 'Proyecto 1',
     brief: 'Descripción breve placeholder del primer proyecto personal.',
@@ -14,7 +13,6 @@ export const personalProjects = [
     ],
   },
   {
-    id: 'proyecto-2',
     slug: 'proyecto-2',
     title: 'Proyecto 2',
     brief: 'Descripción breve placeholder del segundo proyecto personal.',
@@ -28,7 +26,6 @@ export const personalProjects = [
     ],
   },
   {
-    id: 'proyecto-3',
     slug: 'proyecto-3',
     title: 'Proyecto 3',
     brief: 'Descripción breve placeholder del tercer proyecto personal.',

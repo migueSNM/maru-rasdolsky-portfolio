@@ -3,6 +3,7 @@ import Masonry from './Masonry'
 import { personalProjects } from '../data/personalProjects'
 import { photoSrc } from '../lib/photoSrc'
 import './SectionPage.css'
+import './PhotoGrid.css'
 import './ProyectosPersonales.css'
 
 // One tile per project: its first real photo, or a placeholder until it has one.
