@@ -1,0 +1,8 @@
+# Cloudflare cache rules (copied into dist/ by Vite).
+# Photos: browsers reuse them for a week. Give a replaced photo a new filename.
+/photos/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=2592000
+
+# Vite's JS/CSS have content hashes in their names, so they never change.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable

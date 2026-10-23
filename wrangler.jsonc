@@ -1,0 +1,12 @@
+// Cloudflare Workers config: serves the Vite build as a static site.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "marurasdolsky",
+  "account_id": "0511dc7587534745682bfb36365df881",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    // Every route (e.g. /foto-fija) falls back to index.html for React Router.
+    "not_found_handling": "single-page-application"
+  }
+}
