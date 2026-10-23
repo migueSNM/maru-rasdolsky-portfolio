@@ -22,7 +22,7 @@ export default function PhotoGrid({ photos = [] }) {
           >
             {photo.src
               ? <img
-                  src={photoSrc(photo.src)}
+                  src={photoSrc(photo.thumb || photo.src)}
                   alt={photo.alt || photo.label || ''}
                   width={photo.width}
                   height={photo.height}

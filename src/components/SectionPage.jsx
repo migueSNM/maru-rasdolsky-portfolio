@@ -16,7 +16,18 @@ export default function SectionPage() {
         <h1 className="label">{data.navLabel}</h1>
         <p className="section-page__description">{data.description}</p>
       </header>
-      <PhotoGrid key={slug} photos={data.gallery} />
+      {data.groups
+        ? data.groups.map((group) => (
+            <section key={`${slug}-${group.title}`} className="section-page__group">
+              <h2 className="label section-page__group-title">
+                {group.title}
+                {group.credit && <span className="section-page__credit"> — {group.credit}</span>}
+              </h2>
+              <PhotoGrid photos={group.gallery} />
+            </section>
+          ))
+        : <PhotoGrid key={slug} photos={data.gallery} />
+      }
     </div>
   )
 }

@@ -26,3 +26,16 @@
 }
 
 .section-page__back:hover { color: var(--text); }
+
+/* Subsections (e.g. one per film): a small heading above each wall */
+.section-page__group + .section-page__group {
+  margin-top: 1.5rem;
+}
+
+.section-page__group-title {
+  padding: 0 var(--edge) var(--edge);
+}
+
+.section-page__credit {
+  color: var(--dim);
+}

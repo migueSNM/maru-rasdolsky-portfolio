@@ -1,20 +1,20 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Masonry from './Masonry'
-import { sections } from '../data/sections'
+import { sections, sectionPhotos } from '../data/sections'
 import { personalProjects } from '../data/personalProjects'
 import { photoSrc } from '../lib/photoSrc'
 import './Home.css'
 
 // How many photos each section or project may contribute, so no single
 // section dominates the wall once others have photos too.
-const PER_SECTION = 6
+const PER_SECTION = 10
 const MAX_PHOTOS = 40
 
 // Real photos grouped by the page they belong to.
 function collectGroups() {
   const fromSections = Object.values(sections).map((section) =>
-    section.gallery
+    sectionPhotos(section)
       .filter((photo) => photo.src)
       .map((photo) => ({ ...photo, to: `/${section.slug}`, section: section.navLabel }))
   )
@@ -69,7 +69,7 @@ export default function Home() {
             aria-label={photo.section}
           >
             <img
-              src={photoSrc(photo.src)}
+              src={photoSrc(photo.thumb || photo.src)}
               alt={photo.alt || ''}
               width={photo.width}
               height={photo.height}
