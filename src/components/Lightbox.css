@@ -12,9 +12,15 @@
   padding: var(--edge);
 }
 
+/* The dialog holds focus while browsing; it is not a control */
+.lightbox:focus { outline: none; }
+
 .lightbox__image {
   flex: 1;
   min-height: 0;
+  container-type: size;
+  /* Horizontal swipes are handled in Lightbox.jsx; keep pinch zoom */
+  touch-action: pan-y pinch-zoom;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,6 +36,13 @@
   width: auto;
   height: auto;
   object-fit: contain;
+}
+
+/* Sized from the photo's known ratio, so it fits before the file loads */
+.lightbox__image img.lightbox__photo--sized {
+  width: min(100cqw, 100cqh * var(--ratio));
+  aspect-ratio: var(--ratio);
+  background: center / cover no-repeat;
 }
 
 .lightbox__label {
